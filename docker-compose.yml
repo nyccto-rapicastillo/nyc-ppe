@@ -6,11 +6,12 @@ services:
     build:
       dockerfile: Dockerfile
       context: .
-    entrypoint: ["sleep", "infinity"]
+    # entrypoint: []
     links:
       - db
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     ports:
-      - "8000:8000"
+      - "80:8000"
     volumes:
       - ./:/app
       - ~/.covid_bash_history:/home/root/.bash_history

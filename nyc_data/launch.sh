@@ -1,7 +1,9 @@
 #!/bin/bash
 set -e
-
+echo ">>>>> Running LAUNCH"
 if [ "$MIGRATE" ]; then
+  echo ">>>>> MIGRATING"
   python manage.py migrate
 fi
-gunicorn -b 0.0.0.0:8000 nyc_data.wsgi
+
+python manage.py runserver 8000
