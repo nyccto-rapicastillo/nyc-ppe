@@ -18,6 +18,11 @@ dj-database-url = "*"
 whitenoise = "*"
 ortools = "*"
 black = "*"
+sentry-sdk = "*"
+django-allauth = "*"
+freezegun = "*"
+fuzzywuzzy = "*"
+werkzeug = "*"
 
 [requires]
 python_version = "3.8"

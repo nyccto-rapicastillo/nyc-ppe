@@ -15,7 +15,7 @@ a:hover {
 }
 
 section.container {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -127,11 +127,6 @@ section.content {
     color: #CE4C23;
 }
 
-.error {
-    text-align: center;
-    display: block   
-}
-
 .balance-bar-red {
     background: #CE4C23;
 }
@@ -158,9 +153,19 @@ section.content {
     justify-content: center;
 }
 
+.upload .error {
+    text-align: center;
+    display: block   
+}
+
 .lockdown form, .upload form {
     display: inline-block;
     text-align: center;
+}
+
+.lockdown p {
+    max-width: 300px;
+    font-weight: 300;
 }
 
 .lockdown label, .upload label {
@@ -174,7 +179,7 @@ section.content {
 .lockdown input, .upload input {
     display: block;
     min-width: 250px;
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -385,15 +390,47 @@ body.drilldown .dashboard-table {
     background: #fafafa;
 }
 
-.dashboard-table th, td {
+.dashboard-table th, .dashboard-table td {
     padding-right: 20px;
     padding-top: 16px;
     padding-bottom: 16px;
     text-align: left;
 }
 
+.dashboard-table td.disabled .value, .dashboard-table td.disabled .unit, .dashboard-table th.disabled a, .dashboard-table td.disabled {
+    color: #ccc;
+}
+
 .dashboard-table td {
     white-space: pre;
+}
+
+.dashboard-table th svg {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.dashboard-table th.warning svg, svg.warning {
+    fill: #CE9E23;
+}
+
+.dashboard-table th.error svg, svg.error {
+    fill: #CE4C23;
+}
+
+.dashboard-table tfoot {
+    border-top: 1px solid #ddd;
+}
+.dashboard-table tfoot td, .dashboard-table tfoot .value {
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.icon-clock {
+    display: inline;
 }
 
 /* Drilldown styles */
@@ -424,6 +461,10 @@ body.drilldown .dashboard-table {
 .drilldown-deliveries {
     font-size: 14px;
     font-weight: 300;
+}
+
+.drilldown-deliveries td svg {
+    vertical-align: bottom;
 }
 
 .drilldown-deliveries-desc {
@@ -459,4 +500,102 @@ body.drilldown .dashboard-table {
     font-weight: 300;
     color: #888;
     font-size: 14px;
+}
+
+/* Datepicker styles */
+
+#reportrange {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#reportrange::after {
+    display: inline-block;
+    content: "▼";
+    font-size: 14px;
+    margin-left: 5px;
+    vertical-align: middle;
+    color: #999;
+}
+
+#reportrange span {
+    text-decoration: underline;
+    color: #000;
+}
+
+.daterangepicker td.active, .daterangepicker td.active:hover {
+    background-color: #0a5796;
+}
+
+.daterangepicker .ranges li.active {
+    background-color: #0a5796;
+}
+
+.daterangepicker .drp-buttons .btn {
+    background: #eee;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    font-weight: 300;
+}
+
+.daterangepicker .drp-buttons .btn-primary {
+    background: #0a5796;
+    border: 1px solid #ddd;
+    color: #fff;
+}
+
+/* Supply controls */
+
+.supply-col svg {
+    height: 14px;
+    width: 14px;
+    cursor: pointer;
+}
+
+.supply-col svg path { fill: #888; }
+.supply-col svg.active path { fill: #8c8; }
+
+.supply-controls {
+    display: none;
+    position: absolute;
+    background: #fff;
+    box-shadow: 0px 0px 20px #0003;
+    border-radius: 5px;
+    min-width: 200px;
+    margin-top: 10px;
+}
+
+.supply-controls h3 {
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 333;
+    margin: 0 0 10px 0;
+    background: #333;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.supply-controls ul {
+    list-style-type: none;
+    margin: 5px 10px;
+    padding: 0;
+}
+
+.supply-controls li {
+    font-weight: 300;
+    font-size: 14px;
+    padding-bottom: 5px;
+}
+
+.supply-controls button {
+    background: #888;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+.supply-controls input {
+    margin-right: 10px;
 }

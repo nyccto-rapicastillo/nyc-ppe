@@ -1,9 +1,6 @@
 #!/bin/bash
 set -e
-echo ">>>>> Running LAUNCH"
-if [ "$MIGRATE" ]; then
-  echo ">>>>> MIGRATING"
-  python manage.py migrate
-fi
 
+python manage.py migrate
+python manage.py collectstatic
 python manage.py runserver 8000

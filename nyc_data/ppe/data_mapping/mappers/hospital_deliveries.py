@@ -64,12 +64,12 @@ item_mappings = [
 ]
 
 FACILITY_DELIVERIES = SheetMapping(
-    sheet_name="Facility Deliveries Summarized",
+    sheet_name="Facility Deliveries Summaries",
     data_file=DataFile.FACILITY_DELIVERIES,
     mappings={
         Mapping(sheet_column_name="Date", obj_column_name="date", proc=parse_date),
         Mapping(
-            sheet_column_name="Facility or Network Name",
+            sheet_column_name="Facility Name or Network",
             obj_column_name="facility_name",
         ),
         Mapping(sheet_column_name="Facility Type", obj_column_name="facility_type"),
